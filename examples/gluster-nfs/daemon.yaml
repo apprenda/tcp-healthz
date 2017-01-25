@@ -1,0 +1,29 @@
+kind: DaemonSet
+apiVersion: extensions/v1beta1
+metadata:
+  name: gluster-healthz
+spec:
+  template:
+    metadata:
+      labels:
+        app: gluster-healthz
+    spec:
+      containers:
+        - name: tcp-healthz
+          image: kismatic/tcp-healthz-amd64:v0.0.1
+          command: ["/exechealthz"]
+          args:
+            - -cmd=/tcp-healthz-amd64 --port 111 --port 2049 --port 38465 --port 38466 --port 38467
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 5
+            timeoutSeconds: 2
+      hostNetwork: true
+      nodeSelector:
+        gluster: "true"
