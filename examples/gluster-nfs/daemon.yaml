@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
         - name: tcp-healthz
-          image: kismatic/tcp-healthz-amd64:v0.0.1
+          image: apprenda/tcp-healthz-amd64:latest
           command: ["/exechealthz"]
           args:
             - -cmd=/tcp-healthz-amd64 --port 111 --port 2049 --port 38465 --port 38466 --port 38467

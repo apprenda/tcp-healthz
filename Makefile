@@ -4,7 +4,7 @@ ifeq ($(origin VERSION), undefined)
 endif
 
 BUILD_DATE := $(shell date -u)
-IMAGE=kismatic/tcp-healthz-amd64
+IMAGE=apprenda/tcp-healthz-amd64
 HOST_GOOS = $(shell go env GOOS)
 
 ifeq ($(origin GOOS), undefined)
