@@ -32,8 +32,8 @@ container-tar: container
 
 push: container
 	# Only push tagged versions from master
-	ifeq($CURRENT_BRANCH, master)
-	ifeq($LATEST_TAG, $LATEST_TAG_COMMIT)
+	ifeq($(CURRENT_BRANCH), master)
+	ifeq($(LATEST_TAG), $(LATEST_TAG_COMMIT))
 		docker push $(IMAGE):$(VERSION)
 	endif
 	endif
