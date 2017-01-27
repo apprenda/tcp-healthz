@@ -12,7 +12,7 @@ ifeq ($(origin GOOS), undefined)
 endif
 
 build:
-	go build -o bin/tcp-healthz-$(GOOS)-amd64 -ldflags "-X main.version=$(VERSION) -X 'main.buildDate=$(BUILD_DATE)'"
+	GOOS=$(GOOS) go build -o bin/tcp-healthz-$(GOOS)-amd64 -ldflags "-X main.version=$(VERSION) -X 'main.buildDate=$(BUILD_DATE)'"
 
 clean:
 	rm -rf bin
@@ -26,4 +26,4 @@ container-tar: container
 	docker save $(IMAGE):$(VERSION) > container.tar
 
 push: container
-		./docker-push.sh $(IMAGE):$(VERSION)
+	./docker-push.sh $(IMAGE):$(VERSION)
