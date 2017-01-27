@@ -24,3 +24,6 @@ container: build
 
 container-tar: container
 	docker save $(IMAGE):$(VERSION) > container.tar
+
+push: container
+	docker push $(IMAGE):$(VERSION)
