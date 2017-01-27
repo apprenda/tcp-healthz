@@ -1,5 +1,7 @@
 # tcp-healthz
 
+[![Build Status](https://app.snap-ci.com/apprenda/tcp-healthz/branch/master/build_image)](https://app.snap-ci.com/apprenda/tcp-healthz/branch/master)
+
 Expose a liveness or readiness probe for off-cluster services that expose TCP endpoints.
 
 ## How it works
