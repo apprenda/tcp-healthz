@@ -13,7 +13,7 @@ spec:
           image: apprenda/tcp-healthz-amd64:latest
           command: ["/exechealthz"]
           args:
-            - -cmd=/tcp-healthz-amd64 --port 111 --port 2049 --port 38465 --port 38466 --port 38467
+            - -cmd=/tcp-healthz-amd64 --ports 111,2049,38465,38466,38467
           ports:
             - containerPort: 8080
               protocol: TCP
