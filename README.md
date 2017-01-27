@@ -1,5 +1,7 @@
 # tcp-healthz
 
+[![Build Status](https://snap-ci.com/ulSrRsof30gMr7eaXZ_eufLs7XQtmS6Lw4eYwkmATn4/build_image)](https://snap-ci.com/apprenda/kismatic/branch/master)
+
 Expose a liveness or readiness probe for off-cluster services that expose TCP endpoints.
 
 ## How it works
