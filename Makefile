@@ -12,7 +12,7 @@ ifeq ($(origin GOOS), undefined)
 endif
 
 build:
-	GOOS=$(GOOS) go build -o bin/tcp-healthz-$(GOOS)-amd64 -ldflags "-X main.version=$(VERSION) -X 'main.buildDate=$(BUILD_DATE)'"
+	GOOS=$(GOOS) go build -o bin/tcp-healthz-$(GOOS)-amd64 -ldflags "-X main.version=$(VERSION) -X 'main.buildDate=$(BUILD_DATE)' -extldflags '-static'"
 
 clean:
 	rm -rf bin
