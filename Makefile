@@ -20,6 +20,7 @@ build:
 	  $(BUILD_IMAGE)                                                                \
 	  /bin/sh -c "                                                                  \
 	    GOOS=$(GOOS)                                                                \
+	    CGO_ENABLED=0                                                               \
 	    go build                                                                    \
 	    -o bin/tcp-healthz-$(GOOS)-amd64                                            \
 	    -ldflags \"-X 'main.version=$(VERSION)' -X 'main.buildDate=$(BUILD_DATE)'\" \
